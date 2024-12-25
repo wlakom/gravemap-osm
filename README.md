@@ -5,11 +5,9 @@ OpenStreetMap Grave Finder
 
 (Wyszukiwarka grobów na OSM)
 ---
-I am (wlakom) a beginner user of GitHub. I would like to develop this repository, but I do not know how to do it.
-
 Things to do:
 
-+ "sector:name=N". is not visible. Every letter matches except "N". Probably confused with "Null".
+1. "sector:name-N" is not visible. Every letter matches except "N". Probably confused with "Null".
 
 Initialization Issue:
 Ensure that the active.tags['sector:name'] is correctly initialized and not set to null somewhere in your code.
@@ -20,16 +18,15 @@ Check if there are any conditions or logic that might be setting active.tags['se
 Data Binding Issue:
 Make sure that the data binding is correctly set and not being overwritten or reset to null.
 
-+ The map covers the inscription in "footer" which is on a white background.
+2. The map covers the inscription in "footer" which is on a white background.
 
-+ 
-+ Depending on the language selection, Polish, English, display subtitles on the main and side page.
+3. Depending on the language selection, Polish, English, display subtitles on the main and side page.
  -
   * en:OpenStreetMap Grave Finder
-  * pl: Wyszukiwarka grobów na OpenStreetMap
+  * pl:Wyszukiwarka grobów na OSM
  -
-  * en:LOAD GRAVES FROM AREA
-  * pl:ZAŁADUJ GROBY Z OBSZARU
+  * en:Load graves from area
+  * pl:Załaduj groby z obszaru
  -
   * en:Place
   * pl:Miejscowość
@@ -66,8 +63,4 @@ Make sure that the data binding is correctly set and not being overwritten or re
  -
   * en:roman_catholic
   * pl: rzymskokatolicyzm
- -
-  * en:christian
-  * pl:chrzecijaństwo
- - 
-
+* 
