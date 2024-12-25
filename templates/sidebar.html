@@ -33,19 +33,7 @@
             <div class="aside-section aside-tags">
               <div ng-show="active.latlng">Coordinates (Współrządne): <i><a href="https://nominatim.openstreetmap.org/search?q={{active.latlng}}" target="_blank">{{active.latlng}}</a></i></div>              
               <div ng-show="active.tags['ref']">Ref: <i>{{active.tags['ref']}}</i></div>           
-              <div ng-show="active.tags['sector:name']">— Sector (Sektor): <i class="ng-binding">{{ active.tags['sector:name'] }}</i></div>
-
-<script>
-    var app = angular.module('myApp', []);
-    app.controller('MainController', function($scope) {
-        $scope.active = {
-            tags: {
-                'sector:name': 'N'
-            }
-        };
-    });
-</script>
-              
+              <div ng-show="active.tags['sector:name']">&mdash; Sector (Sektor): <i>{{ active.tags['sector:name'] }}</i></div>
               <div ng-show="active.tags['sector:row']">&mdash; Row (Rząd): <i>{{active.tags['sector:row']}}</i></div>
               <div ng-show="active.tags['sector:place']">&mdash; Place (Miejsce): <i>{{active.tags['sector:place']}}</i></div>
             </div>
