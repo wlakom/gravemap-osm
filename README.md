@@ -5,11 +5,21 @@ OpenStreetMap Grave Finder
 
 (Wyszukiwarka grobów na OSM)
 ---
-I am a beginner user of GitHub. I would like to develop this repository, but I do not know how to do it.
+I am (wlakom) a beginner user of GitHub. I would like to develop this repository, but I do not know how to do it.
 
 Things to do:
 
-+ The name "Fuchs" has "sector:name=N". but this information is not visible. Every letter matches except "N"
++ "sector:name=N". is not visible. Every letter matches except "N". Probably confused with "Null".
+
+Initialization Issue:
+Ensure that the active.tags['sector:name'] is correctly initialized and not set to null somewhere in your code.
+
+Conditional Rendering:
+Check if there are any conditions or logic that might be setting active.tags['sector:name'] to null.
+
+Data Binding Issue:
+Make sure that the data binding is correctly set and not being overwritten or reset to null.
+
 + The map covers the inscription in "footer" which is on a white background.
 
 + 
