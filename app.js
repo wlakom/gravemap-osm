@@ -173,6 +173,8 @@ $scope.parseData = function(data) {
     if (grave.tags) $scope.drawGrave(grave.id);
   });
 };
+
+
 function matchPattern(name, pattern) {
     // Remove the static "sector:name=" part from the pattern
     pattern = pattern.replace("sector:name=", "");
@@ -202,6 +204,31 @@ if (result) {
 } else {
     console.log(`The name "${name}" does not match the pattern "${pattern}"`);
 }
+
+function matchPattern(name, pattern) {
+    console.log("Original pattern:", pattern);
+    // Remove the static "sector:name=" part from the pattern
+    pattern = pattern.replace("sector:name=", "");
+    console.log("Trimmed pattern:", pattern);
+
+    // Checking if the length of the name and the pattern are the same
+    if (name.length !== pattern.length) {
+        console.log("Length mismatch");
+        return false;
+    }
+
+    // Loop through each character to check for matches
+    for (let i = 0; i < name.length; i++) {
+        console.log(`Comparing name[${i}] = ${name[i]} with pattern[${i}] = ${pattern[i]}`);
+        if (pattern[i] !== 'N' && name[i] !== pattern[i]) {
+            console.log("Character mismatch");
+            return false;
+        }
+    }
+
+    return true;
+}
+    
     /////////////////////////////////////////////////////////////////////////////////// DRAWING ////
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
