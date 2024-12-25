@@ -7,7 +7,8 @@ OpenStreetMap Grave Finder
 ---
 Things to do:
 
-1. "sector:name-N" is not visible. Every letter matches except "N". Probably confused with "Null".
+1. "sector:name-N" is not visible. Get always class="ng-hide|". Every letter matches except "N". Probably confused with "Null".
+
 
 Initialization Issue:
 Ensure that the active.tags['sector:name'] is correctly initialized and not set to null somewhere in your code.
