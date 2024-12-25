@@ -175,30 +175,6 @@ $scope.parseData = function(data) {
 };
 
 
-function matchPattern(name, pattern) {
-    console.log("Original pattern:", pattern);
-    // Remove the static "sector:name=" part from the pattern
-    pattern = pattern.replace("sector:name=", "");
-    console.log("Trimmed pattern:", pattern);
-
-    // Checking if the length of the name and the pattern are the same
-    if (name.length !== pattern.length) {
-        console.log("Length mismatch");
-        return false;
-    }
-
-    // Loop through each character to check for matches
-    for (let i = 0; i < name.length; i++) {
-        console.log(`Comparing name[${i}] = ${name[i]} with pattern[${i}] = ${pattern[i]}`);
-        if (pattern[i] !== 'N' && name[i] !== pattern[i]) {
-            console.log("Character mismatch");
-            return false;
-        }
-    }
-
-    return true;
-}
-    
     /////////////////////////////////////////////////////////////////////////////////// DRAWING ////
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
