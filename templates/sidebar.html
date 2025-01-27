@@ -26,16 +26,16 @@
           </div>
             <div ng-show="active.tags.inscription"><b>{{active.tags.inscription}}</b></div>
             <div ng-show="active.tags.description"><i>{{active.tags.description}}</i></div>
-         <h6>{{active.tags.religion}} {{active.tags.denomination}}</h6>  
+         <h6><span {{active.tags.religion}}&U+003B; </span><span {{active.tags.denomination}}</span></h6>  
                <div class="aside-section aside-header">           
               <b>Location <i>(Lokalizacja)</i>:</b><br>
                </div>
 
              <div class="aside-section aside-tags">
-              <div ng-show="active.latlng">Coordinates (Współrządne): <i><a href="https://nominatim.openstreetmap.org/search?q={{active.latlng}}" target="_blank">{{active.latlng}}</a></i></div>              
-              <div ng-show="active.tags['sector:name']">&mdash; Sector (Sektor): <i>{{active.tags['sector:name']}}</i></div>
-              <div ng-show="active.tags['sector:row']">&mdash; Row (Rząd): <i>{{active.tags['sector:row']}}</i></div>
-              <div ng-show="active.tags['sector:place']">&mdash; Place (Miejsce): <i>{{active.tags['sector:place']}}</i></div>
+              <div ng-show="active.latlng">Coordinates <i>(Współrządne): </i><a href="https://nominatim.openstreetmap.org/search?q={{active.latlng}}" target="_blank">{{active.latlng}}</a></div>              
+              <div ng-show="active.tags['sector:name']">&mdash; <i>Sector (Sektor): </i>{{active.tags['sector:name']}}</div>
+              <div ng-show="active.tags['sector:row']">&mdash; <i>Row (Rząd): </i>i>{{active.tags['sector:row']}}</div>
+              <div ng-show="active.tags['sector:place']">&mdash; <i>Place (Miejsce): </i>i>{{active.tags['sector:place']}}</div>
             </div>
           </div>
 
@@ -47,7 +47,7 @@
               <h4  ng-hide="person.tags.wikipedia"><b>{{person.name}}</b></h4>
               <h4 ng-show="person.tags.wikipedia"><b><a href="https://en.wikipedia.org/wiki/{{person.tags.wikipedia}}" target="_blank">{{person.name}}</a></b></h4>
               <div ng-show="person.tags.family_name">Nee <i>(z.d.)</i>: <b>{{person.tags.family_name}}</b></div>
-                <h6>{{person.tags.religion}} {{person.tags.denomination}}</h6> 
+         <h6><span {{person.tags.religion}}&U+003B; </span><span {{person.tags.denomination}}</span></h6>  
               
               <div ng-show="person.tags['image']">
               <img ng-src="{{person.tags['image']}}" alt="Zdjęcie zmarłego" width="300">
@@ -62,9 +62,9 @@
              </div>
                 <div ng-show="person.tags.description"><i>{{person.tags.description}}</i></div>
               <div>{{person.tags.born ? person.tags.born : '??'}} &mdash; {{person.tags.died ? person.tags.died : '??'}}</div>
-              <div ng-show="person.tags.birthplace">Birthplace <i>(Miejsce urodzenia)</i>: <i>{{person.tags.birthplace}}</i></div>
-              <div ng-show="person.tags.deathplace">Deathplace <i>(Miejsce zgonu)</i>: <i>{{person.tags.deathplace}}</i></div>
-              <div ng-show="person.tags.lived_in">Lived_in <i>(Miejsce zamieszkania)</i>: <i>{{person.tags.lived_in}}</i></div>
+              <div ng-show="person.tags.birthplace">Birthplace <i>(Miejsce urodzenia)</i>: {{person.tags.birthplace}}</div>
+              <div ng-show="person.tags.deathplace">Deathplace <i>(Miejsce zgonu)</i>: {{person.tags.deathplace}}</div>
+              <div ng-show="person.tags.lived_in">Lived_in <i>(Miejsce zamieszkania)</i>: {{person.tags.lived_in}}</div>
              </div>
           </div>
       </div>
