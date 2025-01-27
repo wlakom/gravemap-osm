@@ -64,7 +64,7 @@ a:hover {
   margin-top: 110px;
   background-color: #e0e0f7;
   padding: 5px;
-  overflow: scroll;\
+  overflow: scroll;
 }
 
 .aside .aside-dialog .aside-body {
@@ -73,7 +73,7 @@ a:hover {
 
 .aside-body h3, .aside-body h4 {
   margin: 15px 0 5px;
-  }
+}
 
 .aside-body h3 a, .aside-body h4 a {
 /*  font-size: 85%;
