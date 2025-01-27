@@ -5,8 +5,6 @@ OpenStreetMap Grave Finder
 
 (Wyszukiwarka grobów na OpenSreetMap)
 ---
-I am a beginner user of GitHub. I would like to develop this repository, but I do not know how to do it.
-
 Things to do:
 
 1. "sector:name-N" is not visible. Get always class="ng-hide|". Every letter matches except "N". Probably confused with "Null".
