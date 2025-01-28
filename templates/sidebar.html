@@ -10,8 +10,10 @@
       </div>    
       
       <div class="aside-body">
+         <div class="aside-section aside-header"> 
              <div ng-show="active.tags['cemetery:name']"><h4><b><style="background-color:Maroon; color:#fff;">{{active.tags['cemetery:name']}}</style></b></h4> </div>
-              <div ng-show="active.tags['name']"><h3><b><i>{{active.tags['name']}}</i></b></h3> </div>
+         </div>   
+           <div ng-show="active.tags['name']"><h3><b><i>{{active.tags['name']}}</i></b></h3> </div>
           <div class="aside-section aside-tags">
              <div ng-show="active.tags['wikimedia_commons']">
              <img ng-src="https://commons.wikimedia.org/w/thumb.php?f={{active.tags['wikimedia_commons'].substring(5)}}&w=300" alt="Zdjęcie grobu z Wikimedii">
@@ -26,7 +28,7 @@
           </div>
             <div ng-show="active.tags.inscription"><b>{{active.tags.inscription}}</b></div>
             <div ng-show="active.tags.description"><i>{{active.tags.description}}</i></div>
-         <h6><span>{{active.tags.religion}}&sbquo; </span><span>{{active.tags.denomination}}</span></h6>  
+         <h6><span ng-show="active.tags.religion" &sbquo;>{{active.tags.religion}} </span><span>{{active.tags.denomination}}</span></h6>  
                <div class="aside-section aside-header">           
               <b>Location <i>(Lokalizacja)</i>:</b><br>
                </div>
