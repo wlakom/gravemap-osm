@@ -22,18 +22,7 @@
             <i class="fa fa-refresh fa-spin" backgroung=red></i> Loading...
           </span>
           <clear>
-          <div class="absolute-right">
-             <div class="navbar-choice">
-             <select id="language" onchange="ChangeLanguage(this.value);" >
-                  <option class="SelectItem" value="pl" selected>Polski</option>
-                  <option class="SelectItem" value="en">English</option>
-                </select>
-                <span class="btn-primary">
-                  <label for="language">Language</label>
-                 </span>
-            </div>
-
-            <form ng-submit="search()">
+              <form ng-submit="search()">
               <div class="input-group">
                 <input type="text" class="form-control" ng-model="searchText" placeholder="place">
                 <span class="input-group-btn">
