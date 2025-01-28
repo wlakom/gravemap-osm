@@ -10,7 +10,7 @@
       </div>    
       
       <div class="aside-body">
-             <div style="color:White; background-color:Maroon;" ng-show="active.tags['cemetery:name']"><h4><b>{{active.tags['cemetery:name']}}</b></h4> </div>
+             <div style="color:#fff; background-color:Maroon;" ng-show="active.tags['cemetery:name']"><h4><b>{{active.tags['cemetery:name']}}</b></h4> </div>
               <div ng-show="active.tags['name']"><h3><b><i>{{active.tags['name']}}</i></b></h3> </div>
           <div class="aside-section aside-tags">
              <div ng-show="active.tags['wikimedia_commons']">
@@ -26,7 +26,7 @@
           </div>
             <div ng-show="active.tags.inscription"><b>{{active.tags.inscription}}</b></div>
             <div ng-show="active.tags.description"><i>{{active.tags.description}}</i></div>
-         <h6><span>{{active.tags.religion}}; </span><span>{{active.tags.denomination}}</span></h6>  
+         <h6><span>{{active.tags.religion}}&sbquo; </span><span>{{active.tags.denomination}}</span></h6>  
                <div class="aside-section aside-header">           
               <b>Location <i>(Lokalizacja)</i>:</b><br>
                </div>
@@ -47,7 +47,7 @@
               <h4  ng-hide="person.tags.wikipedia"><b>{{person.name}}</b></h4>
               <h4 ng-show="person.tags.wikipedia"><b><a href="https://en.wikipedia.org/wiki/{{person.tags.wikipedia}}" target="_blank">{{person.name}}</a></b></h4>
               <div ng-show="person.tags.family_name">Nee <i>(z.d.)</i>: <b>{{person.tags.family_name}}</b></div>
-         <h6><span>{{person.tags.religion}}; </span><span>{{person.tags.denomination}}</span></h6>  
+         <h6><span>{{person.tags.religion}}&sbquo; </span><span>{{person.tags.denomination}}</span></h6>  
               
               <div ng-show="person.tags['image']">
               <img ng-src="{{person.tags['image']}}" alt="Zdjęcie zmarłego" width="300">
