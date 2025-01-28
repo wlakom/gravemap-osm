@@ -1,20 +1,16 @@
-<div class="aside" tabindex="-1" role="dialog">
+div class="aside" tabindex="-1" role="dialog">
   <div class="aside-dialog">
     <div class="aside-content">
       <div class="aside-body aside-header">
         <h3></h3>
         <span class="pull-right">
-          <a href="http://osm.org/{{active.type}}/{{active.id}}" target="_blank"><i class="fa fa-chain"></i></a>
-          <button class="btn btn-default btn-sm" ng-click="closeGrave();$hide()"><i class="fa fa-times"></i></button>
-        </span>
+          <a href="http://osm.org/{{active.type}}/{{active.id}}" target="_blank"><i class="fa fa-chain"></i><span> Link to node</span></a>
+          <button class="btn btn-default btn-sm" ng-click="closeGrave();$hide()"><i class="fa fa-chevron-right"></i></button></span>
       </div>    
-      
-      <div class="aside-body">
-         <div class="aside-section aside-header"> 
-             <div ng-show="active.tags['cemetery:name']"><h4><b><style="background-color:Maroon; color:#fff;">{{active.tags['cemetery:name']}}</style></b></h4> </div>
-         </div>   
-           <div ng-show="active.tags['name']"><h3><b><i>{{active.tags['name']}}</i></b></h3> </div>
-          <div class="aside-section aside-tags">
+      <div ng-show="active.tags['cemetery:name']"><b><h4>{{active.tags['cemetery:name']}}</h4></b></div>
+     <div class="aside-dialog aside-body" ng-show="active.tags['name']"><b>{{active.tags['name']}}</b></div>
+           <div class="aside-body">
+         <div class="aside-section aside-tags">
              <div ng-show="active.tags['wikimedia_commons']">
              <img ng-src="https://commons.wikimedia.org/w/thumb.php?f={{active.tags['wikimedia_commons'].substring(5)}}&w=300" alt="Zdjęcie grobu z Wikimedii">
              </div>
@@ -26,18 +22,40 @@
              <div ng-show="active.tags.image">
             <img ng-src="{{active.tags['image']}}" alt="Zdjęcie grobu" width="300">
           </div>
-            <div ng-show="active.tags.inscription"><b>{{active.tags.inscription}}</b></div>
             <div ng-show="active.tags.description"><i>{{active.tags.description}}</i></div>
-         <h6><span ng-show="active.tags.religion" &sbquo;>{{active.tags.religion}} </span><span>{{active.tags.denomination}}</span></h6>  
-               <div class="aside-section aside-header">           
+        <h6><span ng-show="active.tags.religion">{{active.tags.religion}}&sbquo; </span><span ng-show="active.tags.denomination">{{active.tags.denomination}}</span></h6>             
+      <div class="aside-section aside-header">           
               <b>Location <i>(Lokalizacja)</i>:</b><br>
-               </div>
+             </div>
 
              <div class="aside-section aside-tags">
-              <div ng-show="active.latlng">Coordinates <i>(Współrządne): </i><a href="https://nominatim.openstreetmap.org/search?q={{active.latlng}}" target="_blank">{{active.latlng}}</a></div>              
-              <div ng-show="active.tags['sector:name']">&mdash; <i>Sector (Sektor): </i>{{active.tags['sector:name']}}</div>
-              <div ng-show="active.tags['sector:row']">&mdash; <i>Row (Rząd): </i>{{active.tags['sector:row']}}</div>
-              <div ng-show="active.tags['sector:place']">&mdash; <i>Place (Miejsce): </i>{{active.tags['sector:place']}}</div>
+              <div ng-show="active.latlng">Coordinates (Współrządne): <i><a href="https://nominatim.openstreetmap.org/search?q={{active.latlng}}" target="_blank">{{active.latlng}}</a></i></div>              
+              <div ng-show="active.tags['ref']">Ref: <i>{{active.tags['ref']}}</i></div>           
+              <div ng-show="active.tags['sector:name']">— Sector (Sektor): <i class="ng-binding">{{ active.tags['sector:name'] }}</i></div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('MainController', function($scope) {
+    $scope.active = {
+        tags: {
+            'sector:name': 'N' // Ensure this key exists and has a truthy value
+        }
+    };
+
+   // Debugging: Log the initial value of active.tags['sector:name']
+        console.log('Initial value:', $scope.active.tags['sector:name']);
+
+        // Simulating a situation where the value might be set to null
+        setTimeout(function() {
+            $scope.$apply(function() {
+                $scope.active.tags['sector:name'] = null;
+                console.log('Updated value:', $scope.active.tags['sector:name']);
+            });
+        }, 3000);
+});
+</script>
+              <div ng-show="active.tags['sector:row']">&mdash; Row (Rząd): <i>{{active.tags['sector:row']}}</i></div>
+              <div ng-show="active.tags['sector:place']">&mdash; Place (Miejsce): <i>{{active.tags['sector:place']}}</i></div>
             </div>
           </div>
 
@@ -49,7 +67,7 @@
               <h4  ng-hide="person.tags.wikipedia"><b>{{person.name}}</b></h4>
               <h4 ng-show="person.tags.wikipedia"><b><a href="https://en.wikipedia.org/wiki/{{person.tags.wikipedia}}" target="_blank">{{person.name}}</a></b></h4>
               <div ng-show="person.tags.family_name">Nee <i>(z.d.)</i>: <b>{{person.tags.family_name}}</b></div>
-         <h6><span>{{person.tags.religion}}&sbquo; </span><span>{{person.tags.denomination}}</span></h6>  
+              <h6><span ng-show="person.tags.religion">{{person.tags.religion}}&sbquo; </span><span ng-show="person.tags.denomination">{{person.tags.denomination}}</span></h6>             
               
               <div ng-show="person.tags['image']">
               <img ng-src="{{person.tags['image']}}" alt="Zdjęcie zmarłego" width="300">
@@ -62,12 +80,15 @@
              <div ng-show="person.tags.flickr">
              <img ng-src="{{person.tags['flickr']}}" alt="Zdjęcie zmarłego z Flickr" width="300"> 
              </div>
+              
                 <div ng-show="person.tags.description"><i>{{person.tags.description}}</i></div>
               <div>{{person.tags.born ? person.tags.born : '??'}} &mdash; {{person.tags.died ? person.tags.died : '??'}}</div>
-              <div ng-show="person.tags.birthplace">Birthplace <i>(Miejsce urodzenia)</i>: {{person.tags.birthplace}}</div>
-              <div ng-show="person.tags.deathplace">Deathplace <i>(Miejsce zgonu)</i>: {{person.tags.deathplace}}</div>
-              <div ng-show="person.tags.lived_in">Lived_in <i>(Miejsce zamieszkania)</i>: {{person.tags.lived_in}}</div>
-             </div>
+              <div ng-show="person.tags.birthplace">Birthplace <i>(Miejsce urodzenia)</i>: <i>{{person.tags.birthplace}}</i></div>
+              <div ng-show="person.tags.deathplace">Deathplace <i>(Miejsce zgonu)</i>: <i>{{person.tags.deathplace}}</i></div>
+              <div ng-show="person.tags.lived_in">Lived_in <i>(Miejsce zamieszkania)</i>: <i>{{person.tags.lived_in}}</i></div>
+              <div ng-show="person.role.partner">Partner <i>(Partner)</i>: <i>{{person.role.parner}}</i></div>  
+              <div ng-show="person.role.child">Child <i>(Dziecko)</i>: <i>{{person.role.child}}</i></div>                             
+            </div>
           </div>
       </div>
     </div>
