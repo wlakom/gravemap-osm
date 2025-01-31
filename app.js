@@ -49,10 +49,10 @@ app.controller('MapCtrl', ['$scope', '$http', '$aside', '$alert', '$modal', func
     center: [52, 19.5],
     zoom: 6,
     layers: [new L.tileLayer($scope.static.background, {
-      attributionControl: false,
+      attributionControl: true,
       maxZoom: 23,
       maxNativeZoom: 19,
-      opacity: 0.8
+      opacity: 1
     }), $scope.graves.layer]
   });
   new L.Hash($scope.map);
@@ -231,4 +231,4 @@ $scope.parseData = function(data) {
       }
     };
   }]);
-
+  
