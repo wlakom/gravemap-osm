@@ -5,12 +5,15 @@ html, body, .map-container {
 
 a:hover {
   text-decoration: none;
+    background: #e0e0f7;  
 }
 
 #map {
   width: 100%;
-  height: calc(100% - 90px);
+  height: calc(100vh - 120px);
   margin-top: 100px;
+  position: relative;
+  z-index: 1;
 }
 
 .leaflet-container {
@@ -63,16 +66,15 @@ a:hover {
   width: 350px;
   margin-top: 110px;
   background-color: #e0e0f7;
-  padding: 5px;
-  overflow: scroll;\
+  overflow: scroll;
 }
 
 .aside .aside-dialog .aside-body {
-  padding: 15px;
+ padding: 5px;
 }
 
 .aside-body h3, .aside-body h4 {
-  margin: 15px 0 5px;
+ /* margin: 15px 0 5px;*/
   }
 
 .aside-body h3 a, .aside-body h4 a {
@@ -113,6 +115,14 @@ a:hover {
   width: calc(100% - 60px);
 }
 
+.aside .aside-dialog .aside-header h4 {
+  background: Maroon;
+  color: 	white;
+  height: 30px;
+  padding: 10px;
+  width: 300px;
+}
+
 .aside .aside-dialog .aside-header .close {
   padding: 0;
   margin-right: 0;
@@ -146,16 +156,25 @@ a:hover {
 #footer {
   height: 40px;
   width: 100%;
-  background-color: rgba(255,255,255,.7);
+  background-color: #e0e0f7;
   position: sticky;
   bottom: 0;
+  padding-top: 20px;
+  margin-top: 20px;
 }
-
+/*
 #footer .container > div {
-  padding-top: 11px;
+  padding-bottom: 11px;
 }
-
+*/
 
 .tooltip {
   font-size:12px;
+}
+
+h4.ng-binding {
+  color: White;
+  background-color: Maroon;
+  margin-left: 10px;
+  width: 300px;
 }
