@@ -26,7 +26,7 @@
             <div ng-show="active.tags.description"><i>{{active.tags.description}}</i></div>
         <h6><span ng-show="active.tags.religion">{{active.tags.religion}}&sbquo; </span><span ng-show="active.tags.denomination">{{active.tags.denomination}}</span></h6>             
       <div class="aside-section aside-header">           
-              <b>Location <i>(Lokalizacja)</i>:</b><br>
+              <b>Location (Lokalizacja):</b><br>
              </div>
 
              <div class="aside-section aside-tags">
@@ -61,7 +61,7 @@ app.controller('MainController', function($scope) {
           </div>
 
                 <div class="aside-section aside-header">           
-              <b>Buried <i>(Pochowani)</i>:</b><br>
+              <b>Buried (Pochowani):</b><br>
                </div>
           <div class="aside-section aside-tags">
             <div ng-repeat="person in active.people">
@@ -84,11 +84,9 @@ app.controller('MainController', function($scope) {
                 <div ng-show="person.tags.inscription"><b>{{person.tags.inscription}}</b></div>
                 <div ng-show="person.tags.description"><i>{{person.tags.description}}</i></div>
               <div>{{person.tags.born ? person.tags.born : '??'}} &mdash; {{person.tags.died ? person.tags.died : '??'}}</div>
-              <div ng-show="person.tags.birthplace">Birthplace <i>(Miejsce urodzenia)</i>: <i>{{person.tags.birthplace}}</i></div>
-              <div ng-show="person.tags.deathplace">Deathplace <i>(Miejsce zgonu)</i>: <i>{{person.tags.deathplace}}</i></div>
-              <div ng-show="person.tags.lived_in">Lived_in <i>(Miejsce zamieszkania)</i>: <i>{{person.tags.lived_in}}</i></div>
-              <div ng-show="person.role.partner">Partner <i>(Partner)</i>: <i>{{person.role.parner}}</i></div>  
-              <div ng-show="person.role.child">Child <i>(Dziecko)</i>: <i>{{person.role.child}}</i></div>                             
+              <div ng-show="person.tags.birthplace">Birthplace (Miejsce urodzenia): <i>{{person.tags.birthplace}}</i></div>
+              <div ng-show="person.tags.deathplace">Deathplace (Miejsce zgonu): <i>{{person.tags.deathplace}}</i></div>
+              <div ng-show="person.tags.lived_in">Lived_in (Miejsce zamieszkania): <i>{{person.tags.lived_in}}</i></div>
             </div>
           </div>
       </div>
