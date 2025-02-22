@@ -19,7 +19,7 @@ Check if there are any conditions or logic that might be setting active.tags['se
 Data Binding Issue:
 Make sure that the data binding is correctly set and not being overwritten or reset to null.
 
-2. The map covers the inscription in "footer" which is on a white background.
+<s>2. The map covers the inscription in "footer" which is on a white background.</s>
 
 3. Depending on the language selection, Polish, English, display subtitles on the main and side page.
  -
